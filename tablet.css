@@ -1,0 +1,80 @@
+/* Schriftart Roboto einbinden*/
+@import url(https://fonts.googleapis.com/css?family=Roboto);
+
+/* Artikel - Textbeschreibung*/
+.article {
+    -moz-column-count: 2;
+    border: solid;
+    border-width: 2px;
+    padding: 10px;
+    border-top-color: forestgreen;
+    border-bottom-color: lightgrey;
+    border-left-color: lightgrey;
+    border-right-color: lightgrey;
+    border-radius: 0px 0px 10px 10px;
+    box-shadow: 1px 1px 4px 1px grey;
+}
+/* Wrapper - Container*/
+#wrapper {
+    width: 800px;
+    margin: auto;
+}
+/* Header */
+.header {
+    font-size: 45px;
+    padding-top: 15%;
+}
+/* in Tabelle 7.Spalte ausblenden*/
+.table tr td:nth-child(7) {
+    display: none;
+}
+
+/* in Tabelle absteigend 7.Spalte ausblenden*/
+.table_absteigend tr td:nth-child(7) {
+    display: none;
+}
+
+/* Tabelle */
+.table{
+    margin: auto;
+    width: 100%;
+}
+
+/* Tabelle absteigend */
+.table_absteigend{
+    margin: auto;
+    width: 100%;
+}
+
+/* sortierte Tabelle */
+#table2 {
+    display: none;
+}
+
+/* Tabellendaten */
+tbody tr td {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 5px;
+    padding-right: 5px;
+    border-bottom: 1px solid lightgrey;
+    text-align: left;
+}
+
+/* Teamname und Teamnummer */
+.teamnumber_name{
+    text-align: right;
+    display: inline;
+    float: right;
+    margin-bottom: 70px;
+    height: 5px;
+    width: 300px;
+}
+/* Copyright und Modulfachbeschreibung*/
+.copyright{
+    display: inline;
+    float: left;
+    height: 5px;
+    width: 300px;
+    margin-bottom: 70px;
+}

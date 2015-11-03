@@ -1,0 +1,603 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!--Titel der Website -->
+    <meta name="title" content="World Data Overview.">
+    <!--Beschreibung der Website -->
+    <meta name="description" content="This page represents a World Data Overview.">
+    <!--Autor der Website -->
+    <meta name="author" content="Daniel Fischer, Anna Baumgärtel">
+    <!--Keywords/Schlüsselwörter der Website -->
+    <meta name="keywords" content="world data">
+
+    <!--Einbinden der css.reset Datei, sowie Responsive Webdesign für Desktop, Tablet und Smartphone-->
+    <link rel="stylesheet" type="text/css" href="reset.css">
+    <link rel="stylesheet" type="text/css" href="desktop.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="tablet.css" media="screen and (max-width: 1200px)">
+    <link rel="stylesheet" type="text/css" href="smartphone.css" media="screen and (max-width: 800px)">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <!--Einbinden von Javascript -->
+    <script type="text/javascript" src="javascript.js"></script>
+    <!--Titel der Website -->
+     <title>World Data</title>
+</head>
+<body>
+<!-- Navigationsleiste -->
+<nav class="stickynav">
+    <ul class="navbar">
+        <li id="image"><a id="image_hover" href="#"></a></li>
+        <li class="nav_element"><a href="#"><span class="fa fa-list"></span> A1 - Table</a></li>
+        <li class="nav_element"><a href="#"><span class="fa fa-list"></span> A2 - Parse</a></li>
+        <li class="nav_element"><a href="#"><span class="fa fa-list"></span> A2 - Save</a></li>
+        <li class="nav_element"><a href="#"><span class="fa fa-list"></span> A2 - Print</a></li>
+        <li class="nav_element"><a href="#"><span class="fa fa-list"></span> A3 - REST</a></li>
+        <li class="nav_element"><a href="#"><span class="fa fa-list"></span> A4 - Vis</a></li>
+    </ul>
+</nav>
+
+    <div id="wrapper">
+        <!-- Überschrift -->
+    <header class="header">World Data Overview ...</header>
+
+<!-- Textbeschreibung -->
+    <section>
+        <article class="article"> Mavericks reality distortion gradients attenuation.
+            Thought through and through notifications transparency
+            game center multitasking aluminum advanced desktop operating
+            system genius bar. This changes everything designed by Apple in
+            California passbook. Control center photos all-new design SDK
+            technology clock. Simplicity is actually quite complicated.
+            Functional layers 9:41am partly cloudy minimalism. Dock airdrop
+            slide to answer music. Video multitouch iTunes compass. Harmonious
+            finder grid system retina animation compressor experience keynote.
+            Redesign services API notes system preferences. Features siri
+            flat buttons airplane mode calculator. Missed call cover flow
+            compare models. Wi-Fi apple care volume reminder controls.
+            My stations folders mac power ultimate upgrade. Shop online
+            quicktime trackpad server aperture rumors education safari one to one.
+            Remote desktop motion business. Backlit keyboard chess phone airport
+            extreme support iPad. Accessories magsafe terminal final cut pro.
+            Featured TV shows downloads digital color meter. Glossy tech specs
+            bluetooth manuals. OpenGL products FaceTime free shipping recycling
+            mission control applications. from:
+            <a class="jony_ipsum" href="http://www.jonyipsum.com">jony_ipsum</a>
+        </article>
+    </section>
+
+        <!-- Show/Hide Auswahl oberhalb der Tabelle-->
+    <section class="show_menu">
+        <span>Show/Hide:</span>
+        <label for="toggle-1"><input type="checkbox" id="toggle-1" onclick="visibility_birth()"><span class="clickables">birth rate</span></label>
+        <span>|</span>
+        <label for="toggle-2"><input type="checkbox" id="toggle-2" onclick="visibility_cells()"><span class="clickables">cellphones</span></label>
+        <span>|</span>
+        <label for="toggle-3"><input type="checkbox" id="toggle-3" onclick="visibility_kids()"><span class="clickables">children / woman</span></label>
+        <span>|</span>
+        <label for="toggle-4"><input type="checkbox" id="toggle-4" onclick="visibility_electro()"><span class="clickables">electric usage</span></label>
+        <span>|</span>
+        <label for="toggle-5"><input type="checkbox" id="toggle-5" onclick="visibility_internet()"><span class="clickables">internet usage</span></label>
+    </section>
+
+    <section id="table1">
+        <!-- Tabelle -->
+        <table class="table">
+            <!-- Tabellenkopf -->
+            <thead>
+                <tr>
+                    <td>ID</td>
+                    <td>Country <span id="angle_up" class="fa fa-angle-up" onclick="sortTableFromTop()"></span>
+                                <span id="angle_down" class="fa fa-angle-down"></span></td>
+                    <td class="birth">birth rate / 1000</td>
+                    <td class="cells">cellphones / 100</td>
+                    <td class="kids">children / woman</td>
+                    <td class="electro">electric usage</td>
+                    <td class="internet">internet usage</td>
+                </tr>
+            </thead>
+            <!-- Tabelleninhalt -->
+            <tbody>
+                <tr>
+                    <td>001</td>
+                    <td>Brazil</td>
+                    <td class="birth">15.277</td>
+                    <td class="cells">65.472</td>
+                    <td class="kids">1.568</td>
+                    <td class="electro">675389.56</td>
+                    <td class="internet">7558.966</td>
+                </tr>
+                <tr>
+                    <td>002</td>
+                    <td>Canada</td>
+                    <td class="birth">15.277</td>
+                    <td class="cells">65.472</td>
+                    <td class="kids">1.568</td>
+                    <td class="electro">675389.56</td>
+                    <td class="internet">7558.966</td>
+                </tr>
+                <tr>
+                    <td>003</td>
+                    <td>Chile</td>
+                    <td class="birth">15.277</td>
+                    <td class="cells">65.472</td>
+                    <td class="kids">1.568</td>
+                    <td class="electro">675389.56</td>
+                    <td class="internet">7558.966</td>
+                </tr>
+                <tr>
+                    <td>004</td>
+                    <td>China</td>
+                    <td class="birth">15.277</td>
+                    <td class="cells">65.472</td>
+                    <td class="kids">1.568</td>
+                    <td class="electro">675389.56</td>
+                    <td class="internet">7558.966</td>
+                </tr>
+                <tr>
+                    <td>005</td>
+                    <td>Colombia</td>
+                    <td class="birth">15.277</td>
+                    <td class="cells">65.472</td>
+                    <td class="kids">1.568</td>
+                    <td class="electro">675389.56</td>
+                    <td class="internet">7558.966</td>
+                </tr>
+                <tr>
+                    <td>006</td>
+                    <td>Ecuador</td>
+                    <td class="birth">15.277</td>
+                    <td class="cells">65.472</td>
+                    <td class="kids">1.568</td>
+                    <td class="electro">675389.56</td>
+                    <td class="internet">7558.966</td>
+                </tr>
+                <tr>
+                    <td>007</td>
+                    <td>Egypt</td>
+                    <td class="birth">15.277</td>
+                    <td class="cells">65.472</td>
+                    <td class="kids">1.568</td>
+                    <td class="electro">675389.56</td>
+                    <td class="internet">7558.966</td>
+                </tr>
+                <tr>
+                    <td>008</td>
+                    <td>Finland</td>
+                    <td class="birth">15.277</td>
+                    <td class="cells">65.472</td>
+                    <td class="kids">1.568</td>
+                    <td class="electro">675389.56</td>
+                    <td class="internet">7558.966</td>
+                </tr>
+                <tr>
+                    <td>009</td>
+                    <td>France</td>
+                    <td class="birth">15.277</td>
+                    <td class="cells">65.472</td>
+                    <td class="kids">1.568</td>
+                    <td class="electro">675389.56</td>
+                    <td class="internet">7558.966</td>
+                </tr>
+                <tr>
+                    <td>010</td>
+                    <td>Germany</td>
+                    <td class="birth">15.277</td>
+                    <td class="cells">65.472</td>
+                    <td class="kids">1.568</td>
+                    <td class="electro">675389.56</td>
+                    <td class="internet">7558.966</td>
+                </tr>
+                <tr>
+                    <td>011</td>
+                    <td>Iceland</td>
+                    <td class="birth">15.277</td>
+                    <td class="cells">65.472</td>
+                    <td class="kids">1.568</td>
+                    <td class="electro">675389.56</td>
+                    <td class="internet">7558.966</td>
+                </tr>
+                <tr>
+                    <td>012</td>
+                    <td>Iraq</td>
+                    <td class="birth">15.277</td>
+                    <td class="cells">65.472</td>
+                    <td class="kids">1.568</td>
+                    <td class="electro">675389.56</td>
+                    <td class="internet">7558.966</td>
+                </tr>
+                <tr>
+                    <td>013</td>
+                    <td>Japan</td>
+                    <td class="birth">15.277</td>
+                    <td class="cells">65.472</td>
+                    <td class="kids">1.568</td>
+                    <td class="electro">675389.56</td>
+                    <td class="internet">7558.966</td>
+                </tr>
+                <tr>
+                    <td>014</td>
+                    <td>Kazakhstan</td>
+                    <td class="birth">15.277</td>
+                    <td class="cells">65.472</td>
+                    <td class="kids">1.568</td>
+                    <td class="electro">675389.56</td>
+                    <td class="internet">7558.966</td>
+                </tr>
+                <tr>
+                    <td>015</td>
+                    <td>Mexico</td>
+                    <td class="birth">15.277</td>
+                    <td class="cells">65.472</td>
+                    <td class="kids">1.568</td>
+                    <td class="electro">675389.56</td>
+                    <td class="internet">7558.966</td>
+                </tr>
+                <tr>
+                    <td>016</td>
+                    <td>New Zealand</td>
+                    <td class="birth">15.277</td>
+                    <td class="cells">65.472</td>
+                    <td class="kids">1.568</td>
+                    <td class="electro">675389.56</td>
+                    <td class="internet">7558.966</td>
+                </tr>
+                <tr>
+                    <td>017</td>
+                    <td>Nigeria</td>
+                    <td class="birth">15.277</td>
+                    <td class="cells">65.472</td>
+                    <td class="kids">1.568</td>
+                    <td class="electro">675389.56</td>
+                    <td class="internet">7558.966</td>
+                </tr>
+                <tr>
+                    <td>018</td>
+                    <td>Peru</td>
+                    <td class="birth">15.277</td>
+                    <td class="cells">65.472</td>
+                    <td class="kids">1.568</td>
+                    <td class="electro">675389.56</td>
+                    <td class="internet">7558.966</td>
+                </tr>
+                <tr>
+                    <td>019</td>
+                    <td>Russia</td>
+                    <td class="birth">15.277</td>
+                    <td class="cells">65.472</td>
+                    <td class="kids">1.568</td>
+                    <td class="electro">675389.56</td>
+                    <td class="internet">7558.966</td>
+                </tr>
+                <tr>
+                    <td>020</td>
+                    <td>Saudi Arabia</td>
+                    <td class="birth">15.277</td>
+                    <td class="cells">65.472</td>
+                    <td class="kids">1.568</td>
+                    <td class="electro">675389.56</td>
+                    <td class="internet">7558.966</td>
+                </tr>
+                <tr>
+                    <td>021</td>
+                    <td>South Africa</td>
+                    <td class="birth">15.277</td>
+                    <td class="cells">65.472</td>
+                    <td class="kids">1.568</td>
+                    <td class="electro">675389.56</td>
+                    <td class="internet">7558.966</td>
+                </tr>
+                <tr>
+                    <td>022</td>
+                    <td>Sweden</td>
+                    <td class="birth">15.277</td>
+                    <td class="cells">65.472</td>
+                    <td class="kids">1.568</td>
+                    <td class="electro">675389.56</td>
+                    <td class="internet">7558.966</td>
+                </tr>
+                <tr>
+                    <td>023</td>
+                    <td>United Arab Emirates</td>
+                    <td class="birth">15.277</td>
+                    <td class="cells">65.472</td>
+                    <td class="kids">1.568</td>
+                    <td class="electro">675389.56</td>
+                    <td class="internet">7558.966</td>
+                </tr>
+                <tr>
+                    <td>024</td>
+                    <td>United Kingdom</td>
+                    <td class="birth">15.277</td>
+                    <td class="cells">65.472</td>
+                    <td class="kids">1.568</td>
+                    <td class="electro">675389.56</td>
+                    <td class="internet">7558.966</td>
+                </tr>
+                <tr>
+                    <td>025</td>
+                    <td>United States</td>
+                    <td class="birth">15.277</td>
+                    <td class="cells">65.472</td>
+                    <td class="kids">1.568</td>
+                    <td class="electro">675389.56</td>
+                    <td class="internet">7558.966</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+<!-- Sortierte Tabelle-->
+        <section id="table2">
+            <!-- Tabelle -->
+            <table class="table_absteigend">
+                <!-- Tabellenkopf -->
+                <thead>
+                <tr>
+                    <td>ID</td>
+                    <td>Country <span id="angle_up_2" class="fa fa-angle-up"></span>
+                        <span id="angle_down_2" class="fa fa-angle-down" onclick="sortTableFromBot()"></span></td>
+                    <td class="birth">birth rate / 1000</td>
+                    <td class="cells">cellphones / 100</td>
+                    <td class="kids">children / woman</td>
+                    <td class="electro">electric usage</td>
+                    <td class="internet">internet usage</td>
+                </tr>
+                </thead>
+                <!-- Tabelleninhalt -->
+                <tbody>
+                <tr>
+                    <td>025</td>
+                    <td>United States</td>
+                    <td class="birth">15.277</td>
+                    <td class="cells">65.472</td>
+                    <td class="kids">1.568</td>
+                    <td class="electro">675389.56</td>
+                    <td class="internet">7558.966</td>
+                </tr>
+                <tr>
+                    <td>024</td>
+                    <td>United Kingdom</td>
+                    <td class="birth">15.277</td>
+                    <td class="cells">65.472</td>
+                    <td class="kids">1.568</td>
+                    <td class="electro">675389.56</td>
+                    <td class="internet">7558.966</td>
+                </tr>
+                <tr>
+                    <td>023</td>
+                    <td>United Arab Emirates</td>
+                    <td class="birth">15.277</td>
+                    <td class="cells">65.472</td>
+                    <td class="kids">1.568</td>
+                    <td class="electro">675389.56</td>
+                    <td class="internet">7558.966</td>
+                </tr>
+                <tr>
+                    <td>022</td>
+                    <td>Sweden</td>
+                    <td class="birth">15.277</td>
+                    <td class="cells">65.472</td>
+                    <td class="kids">1.568</td>
+                    <td class="electro">675389.56</td>
+                    <td class="internet">7558.966</td>
+                </tr>
+                <tr>
+                    <td>021</td>
+                    <td>South Africa</td>
+                    <td class="birth">15.277</td>
+                    <td class="cells">65.472</td>
+                    <td class="kids">1.568</td>
+                    <td class="electro">675389.56</td>
+                    <td class="internet">7558.966</td>
+                </tr>
+                <tr>
+                    <td>020</td>
+                    <td>Saudi Arabia</td>
+                    <td class="birth">15.277</td>
+                    <td class="cells">65.472</td>
+                    <td class="kids">1.568</td>
+                    <td class="electro">675389.56</td>
+                    <td class="internet">7558.966</td>
+                </tr>
+                <tr>
+                    <td>019</td>
+                    <td>Russia</td>
+                    <td class="birth">15.277</td>
+                    <td class="cells">65.472</td>
+                    <td class="kids">1.568</td>
+                    <td class="electro">675389.56</td>
+                    <td class="internet">7558.966</td>
+                </tr>
+                <tr>
+                    <td>018</td>
+                    <td>Peru</td>
+                    <td class="birth">15.277</td>
+                    <td class="cells">65.472</td>
+                    <td class="kids">1.568</td>
+                    <td class="electro">675389.56</td>
+                    <td class="internet">7558.966</td>
+                </tr>
+                <tr>
+                    <td>017</td>
+                    <td>Nigeria</td>
+                    <td class="birth">15.277</td>
+                    <td class="cells">65.472</td>
+                    <td class="kids">1.568</td>
+                    <td class="electro">675389.56</td>
+                    <td class="internet">7558.966</td>
+                </tr>
+                <tr>
+                    <td>016</td>
+                    <td>New Zealand</td>
+                    <td class="birth">15.277</td>
+                    <td class="cells">65.472</td>
+                    <td class="kids">1.568</td>
+                    <td class="electro">675389.56</td>
+                    <td class="internet">7558.966</td>
+                </tr>
+                <tr>
+                    <td>015</td>
+                    <td>Mexico</td>
+                    <td class="birth">15.277</td>
+                    <td class="cells">65.472</td>
+                    <td class="kids">1.568</td>
+                    <td class="electro">675389.56</td>
+                    <td class="internet">7558.966</td>
+                </tr>
+                <tr>
+                    <td>014</td>
+                    <td>Kazakhstan</td>
+                    <td class="birth">15.277</td>
+                    <td class="cells">65.472</td>
+                    <td class="kids">1.568</td>
+                    <td class="electro">675389.56</td>
+                    <td class="internet">7558.966</td>
+                </tr>
+                <tr>
+                    <td>013</td>
+                    <td>Japan</td>
+                    <td class="birth">15.277</td>
+                    <td class="cells">65.472</td>
+                    <td class="kids">1.568</td>
+                    <td class="electro">675389.56</td>
+                    <td class="internet">7558.966</td>
+                </tr>
+                <tr>
+                    <td>012</td>
+                    <td>Iraq</td>
+                    <td class="birth">15.277</td>
+                    <td class="cells">65.472</td>
+                    <td class="kids">1.568</td>
+                    <td class="electro">675389.56</td>
+                    <td class="internet">7558.966</td>
+                </tr>
+                <tr>
+                    <td>011</td>
+                    <td>Iceland</td>
+                    <td class="birth">15.277</td>
+                    <td class="cells">65.472</td>
+                    <td class="kids">1.568</td>
+                    <td class="electro">675389.56</td>
+                    <td class="internet">7558.966</td>
+                </tr>
+                <tr>
+                    <td>010</td>
+                    <td>Germany</td>
+                    <td class="birth">15.277</td>
+                    <td class="cells">65.472</td>
+                    <td class="kids">1.568</td>
+                    <td class="electro">675389.56</td>
+                    <td class="internet">7558.966</td>
+                </tr>
+                <tr>
+                    <td>009</td>
+                    <td>France</td>
+                    <td class="birth">15.277</td>
+                    <td class="cells">65.472</td>
+                    <td class="kids">1.568</td>
+                    <td class="electro">675389.56</td>
+                    <td class="internet">7558.966</td>
+                </tr>
+                <tr>
+                    <td>008</td>
+                    <td>Finland</td>
+                    <td class="birth">15.277</td>
+                    <td class="cells">65.472</td>
+                    <td class="kids">1.568</td>
+                    <td class="electro">675389.56</td>
+                    <td class="internet">7558.966</td>
+                </tr>
+                <tr>
+                    <td>007</td>
+                    <td>Egypt</td>
+                    <td class="birth">15.277</td>
+                    <td class="cells">65.472</td>
+                    <td class="kids">1.568</td>
+                    <td class="electro">675389.56</td>
+                    <td class="internet">7558.966</td>
+                </tr>
+                <tr>
+                    <td>006</td>
+                    <td>Ecuador</td>
+                    <td class="birth">15.277</td>
+                    <td class="cells">65.472</td>
+                    <td class="kids">1.568</td>
+                    <td class="electro">675389.56</td>
+                    <td class="internet">7558.966</td>
+                </tr>
+                <tr>
+                    <td>005</td>
+                    <td>Colombia</td>
+                    <td class="birth">15.277</td>
+                    <td class="cells">65.472</td>
+                    <td class="kids">1.568</td>
+                    <td class="electro">675389.56</td>
+                    <td class="internet">7558.966</td>
+                </tr>
+                <tr>
+                    <td>004</td>
+                    <td>China</td>
+                    <td class="birth">15.277</td>
+                    <td class="cells">65.472</td>
+                    <td class="kids">1.568</td>
+                    <td class="electro">675389.56</td>
+                    <td class="internet">7558.966</td>
+                </tr>
+                <tr>
+                    <td>003</td>
+                    <td>Chile</td>
+                    <td class="birth">15.277</td>
+                    <td class="cells">65.472</td>
+                    <td class="kids">1.568</td>
+                    <td class="electro">675389.56</td>
+                    <td class="internet">7558.966</td>
+                </tr>
+                <tr>
+                    <td>002</td>
+                    <td>Canada</td>
+                    <td class="birth">15.277</td>
+                    <td class="cells">65.472</td>
+                    <td class="kids">1.568</td>
+                    <td class="electro">675389.56</td>
+                    <td class="internet">7558.966</td>
+                </tr>
+                <tr>
+                    <td>001</td>
+                    <td>Brazil</td>
+                    <td class="birth">15.277</td>
+                    <td class="cells">65.472</td>
+                    <td class="kids">1.568</td>
+                    <td class="electro">675389.56</td>
+                    <td class="internet">7558.966</td>
+                </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- Show/Hide Auswahl unterhalb der Tabelle-->
+    <section class="show_menu">
+        <span>Show/Hide:</span>
+        <label for="toggle-6"><input type="checkbox" id="toggle-6" onclick="visibility_birth2()"><span class="clickables">birth rate</span></label>
+        <span>|</span>
+        <label for="toggle-7"><input type="checkbox" id="toggle-7" onclick="visibility_cells2()"><span class="clickables">cellphones</span></label>
+        <span>|</span>
+        <label for="toggle-8"><input type="checkbox" id="toggle-8" onclick="visibility_kids2()"><span class="clickables">children / woman</span></label>
+        <span>|</span>
+        <label for="toggle-9"><input type="checkbox" id="toggle-9" onclick="visibility_electro2()"><span class="clickables">electric usage</span></label>
+        <span>|</span>
+        <label for="toggle-10"><input type="checkbox" id="toggle-10" onclick="visibility_internet2()"><span class="clickables">internet usage</span></label>
+    </section>
+    <!-- Fußzeile -->
+    <footer>
+             <!-- waagerechte grüne Linie -->
+            <hr>
+                <!-- Teamname und Teamnummer -->
+                <div class="teamnumber_name">This solution has been created by:<br>
+                Daniel Fischer(s6352208) and Anna Baumgärtel(s4090287) - Team 07</div>
+
+                <!-- Copyright -->
+                <div class="copyright">Copyright © world_data<br>
+                First course exercise <span id="copyright_bold">HTML,CSS and JS</span> of the lecture Web and Multimedia Engineering</div>
+    </footer>
+    </div>
+</body>
+</html>

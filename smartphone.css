@@ -1,0 +1,90 @@
+/* Schriftart Roboto einbinden*/
+@import url(https://fonts.googleapis.com/css?family=Roboto);
+
+/* Artikel - Textbeschreibung*/
+.article {
+    -moz-column-count: 1;
+    border: solid;
+    border-width: 2px;
+    padding: 10px;
+    border-top-color: forestgreen;
+    border-bottom-color: lightgrey;
+    border-left-color: lightgrey;
+    border-right-color: lightgrey;
+    border-radius: 0px 0px 10px 10px;
+    box-shadow: 1px 1px 4px 1px grey;
+
+}
+/* Wrapper - Container*/
+#wrapper {
+    width: 580px;
+    margin: 0 auto;
+}
+/* Header */
+.header {
+     font-size: 45px;
+     padding-top: 20%;
+}
+/* Auswahlmenü Link*/
+.show_menu span a {
+    padding: 2px;
+}
+/* Tabelle */
+.table{
+    margin: auto;
+    width: 100%;
+}
+/* sortierte Tabelle */
+#table2 {
+    display: none;
+}
+
+/* Tabelle absteigend */
+.table_absteigend{
+    margin: auto;
+    width: 100%;
+}
+/* in Tabelle 5.Spalte ausblenden*/
+.table tr td:nth-child(5) {
+    display: none;
+}
+/* in Tabelle 6.Spalte ausblenden*/
+.table tr td:nth-child(6) {
+    display: none;
+}
+/* in Tabelle 7.Spalte ausblenden*/
+.table tr td:nth-child(7) {
+    display: none;
+}
+
+/* in Tabelle absteigend 5.Spalte ausblenden*/
+.table_absteigend tr td:nth-child(5) {
+    display: none;
+}
+/* in Tabelle absteigend 6.Spalte ausblenden*/
+.table_absteigend tr td:nth-child(6) {
+    display: none;
+}
+/* in Tabelle absteigend 7.Spalte ausblenden*/
+.table_absteigend tr td:nth-child(7) {
+    display: none;
+}
+
+/* Teamname und Teamnummer */
+.teamnumber_name{
+    text-align: right;
+    display: inline;
+    float: right;
+    margin-bottom: 70px;
+    height: 5px;
+    width: 250px;
+}
+
+/* Copyright und Modulfachbeschreibung*/
+.copyright{
+    display: inline;
+    float: left;
+    height: 5px;
+    width: 250px;
+    margin-bottom: 70px;
+}
