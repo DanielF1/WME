@@ -13,4 +13,6 @@ $obj = new WorldDataParser();
 
 $inhalt = $obj->parseCSV("world_data_v1.csv");
 
-echo "<pre>$inhalt</pre>";
+echo "<pre>";
+echo print_r($inhalt);
+echo "</pre>";
