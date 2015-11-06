@@ -34,12 +34,11 @@ class WorldDataParser
         //array_walk_recursive($array,array($xml, 'addChild'));
 
         foreach($array as $a){
-            foreach($a as $b) {
-                foreach($b as $key => $value) {
-                    $xml->addChild("$key", "$value");
+            $subXML = $xml->addChild('Country');
+                foreach($a as $key => $value) {
+                    $subXML->addChild(explode(" ", $key)[0], trim("$value"));
                 }
-            }
         }
-        echo $xml->asXML();
+        return $xml->asXML("world_data.xml");
     }
 }
