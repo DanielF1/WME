@@ -8,4 +8,13 @@
 require_once("world_data_parser.php");
 
 $wdp = new WorldDataParser();
-$wdp->saveXML($wdp->parseCSV("world_data_v1.csv"));
+
+$result = $wdp->parseCSV("world_data_v1.csv");
+
+$save_XML = $wdp->saveXML($result);
+
+if($save_XML){
+    echo 'XML Savestatus erfolgreich (1)';
+}else{
+    echo 'XML Savestatus nicht erfolgreich (0)';
+}
