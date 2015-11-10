@@ -39,6 +39,28 @@ class WorldDataParser
                     $subXML->addChild(explode(" ", $key)[0], trim("$value"));
                 }
         }
-        return $xml->asXML("world_data.xml");
+        $xml->asXML("world_data.xml");
+
+        if($xml->asXML("world_data.xml") == true){
+            echo 'XML Savestatus erfolgreich (1)';
+        }else{
+            echo 'XML Savestatus nicht erfolgreich (0)';
+        }
+    }
+
+    function printXML($xml_datei, $xslt){
+
+        $xml = new DOMDocument;
+        $xml->load($xml_datei);
+
+        $xsl = new DOMDocument;
+        $xsl->load($xslt);
+
+        $proc = new XSLTProcessor;
+        $proc->importStylesheet($xsl);
+
+        $newdom = $proc->transformToDoc($xml);
+        print $newdom->saveXML();
+
     }
 }
