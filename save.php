@@ -11,7 +11,7 @@
 // Einbinden der world_data_parser.php
 require_once("world_data_parser.php");
 
-//neuer Konstruktor WorldDataParser
+// neuer Konstruktor WorldDataParser
 $wdp = new WorldDataParser();
 
 // der Funktion parseCSV wird die datei world_data_v1.csv übergeben

@@ -11,7 +11,7 @@
 // Einbinden der world_data_parser.php
 require_once("world_data_parser.php");
 
-//neuer Konstruktor WorldDataParser
+// neuer Konstruktor WorldDataParser
 $wdp = new WorldDataParser();
 
 // der Funktion parseCSV wird die Datei world_data_v1.csv übergeben
@@ -65,22 +65,22 @@ echo "<!DOCTYPE html>
 <!-- Textbeschreibung -->
     <section>
         <article class=\"article\"> Mavericks reality distortion gradients attenuation.
-Thought through and through notifications transparency
+            Thought through and through notifications transparency
             game center multitasking aluminum advanced desktop operating
             system genius bar. This changes everything designed by Apple in
             California passbook. Control center photos all-new design SDK
             technology clock. Simplicity is actually quite complicated.
-Functional layers 9:41am partly cloudy minimalism. Dock airdrop
+            Functional layers 9:41am partly cloudy minimalism. Dock airdrop
             slide to answer music. Video multitouch iTunes compass. Harmonious
             finder grid system retina animation compressor experience keynote.
-Redesign services API notes system preferences. Features siri
+            Redesign services API notes system preferences. Features siri
             flat buttons airplane mode calculator. Missed call cover flow
             compare models. Wi-Fi apple care volume reminder controls.
-My stations folders mac power ultimate upgrade. Shop online
+            My stations folders mac power ultimate upgrade. Shop online
             quicktime trackpad server aperture rumors education safari one to one.
-Remote desktop motion business. Backlit keyboard chess phone airport
+            Remote desktop motion business. Backlit keyboard chess phone airport
             extreme support iPad. Accessories magsafe terminal final cut pro.
-Featured TV shows downloads digital color meter. Glossy tech specs
+            Featured TV shows downloads digital color meter. Glossy tech specs
             bluetooth manuals. OpenGL products FaceTime free shipping recycling
             mission control applications. from:
             <a class=\"jony_ipsum\" href=\"http://www.jonyipsum.com\">jony_ipsum</a>
