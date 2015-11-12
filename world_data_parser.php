@@ -25,7 +25,7 @@ class WorldDataParser
         // Datei, auf die $handle zeigt, wird geschlossen
         fclose($handle);
 
-
+        // Setzen der $keys als Tag der XML-Elemente
         for ($i = 0; $i < count($line_of_text); $i++) {
             $line_of_text[$i] = array_combine($keys[0], $line_of_text[$i]);
         }
@@ -72,7 +72,7 @@ class WorldDataParser
         // mithilfe von oben erstellten Variable proc dies nun in ein xml Dokument übersetzen
         $newdom = $proc->transformToDoc($xml);
         // das übersetze xml Dokument als xml speichern und ausgeben
-        print $newdom->saveXML();
+        return $newdom->saveXML();
 
     }
 }
