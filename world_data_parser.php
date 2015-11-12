@@ -42,7 +42,7 @@ class WorldDataParser
         foreach($array as $a){
             //den Tag Country hinzufügt
             $subXML = $xml->addChild('Country');
-                 //erneut in Schleife gehen, welche den Key und Value bestimmen
+                 //'eine Stufe tiefer' in Array gehen und key und value bestimmen
                 foreach($a as $key => $value) {
                     $subXML->addChild(explode(" ", $key)[0], trim("$value"));
                 }
@@ -50,7 +50,8 @@ class WorldDataParser
         // World Data wird als xml gespeichert
         $xml->asXML("world_data.xml");
 
-        // wenn das xml Dokument true ist, wird 'XML Savestatus erfolgreich (1)' zurückgegeben, ansonsten 'XML Savestatus nicht erfolgreich (0)'
+        // wenn das xml Dokument true(erfolgreich) ist, wird 'XML Savestatus erfolgreich (1)' zurückgegeben,
+        // ansonsten 'XML Savestatus nicht erfolgreich (0)'
         if($xml->asXML("world_data.xml") == true){
             echo 'XML Savestatus erfolgreich (1)';
         }else{

@@ -17,6 +17,7 @@ $obj = new WorldDataParser();
 // die Funktion parseCSV wird die Datei world_data_v1.csv übergeben
 $inhalt = $obj->parseCSV("world_data_v1.csv");
 
+// laut Aufgabenstellung A1 - Datenstruktur in einem HTML <pre> Element anzeigen
 echo "<pre>";
 // Ausgeben des Inhaltes der csv Datei
 echo print_r($inhalt);
