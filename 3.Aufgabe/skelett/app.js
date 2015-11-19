@@ -15,6 +15,17 @@ app.use( express.static( path.join(__dirname, "public") ) );
 
 // END DO NOT CHANGE!
 
+var json_obj = [];
+
+var converter = new Converter({});
+
+converter.on("end_parsed", function (jsonArray) {
+    json_obj = jsonArray;
+});
+
+//read from file
+require("fs").createReadStream("./world_data.csv").pipe(converter);
+
 
 /**************************************************************************
 ****************************** csv2json *********************************
