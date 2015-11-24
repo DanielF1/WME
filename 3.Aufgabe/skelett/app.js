@@ -69,11 +69,20 @@ app.get('/items/:id1/:id2', function (req, res) {
     // erzeugen von ergebnis array
     var solution = [];
 
-    for( i = id1 - 1; i <= id2 - 1; i++){
-        console.log(i);
+    /*if(id1 > id2){
+        res.send("Range not possible.");
+    }else if(id1 > json_obj.length){
+        res.send("Range not possible.");
+    }else if(id2 > json_obj.length) {
+        res.send("Range not possible.");
+    }*/
 
+
+    for( i = id1 - 1; i <= id2 - 1; i++){
+        // console.log(i);
         solution.push(json_obj[i]);
-    }
+         }
+
     // Ausgabe von Array zwischen id1 und id2
     res.json(solution);
 });
@@ -95,6 +104,15 @@ app.get('/properties', function (req, res) {
 app.get('/properties/:num', function (req, res) {
     var num = req.params.num;
     var keys = [];
+
+
+  /*  if(num > json_obj.length){
+        res.send("No such property available.");
+    }else if(num < 1){
+        res.send("No such property available.");
+    }*/
+
+
     for (key in json_obj[0]) {
         keys.push(key);
     }
