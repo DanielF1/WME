@@ -155,7 +155,6 @@ app.delete('/items/:id', function(req, res) {
 });
 
 
-
 // DO NOT CHANGE!
 // bind server to port
 var server = app.listen(3000, function () {
