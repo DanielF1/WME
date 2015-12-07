@@ -58,6 +58,7 @@ app.get('/items/:id', function (req, res) {
     var user = json_obj[id - 1];
     // Ausgabe von der id mit den dazugeh�rigen Properties
     res.json(user);
+
 });
 
 
@@ -77,9 +78,8 @@ app.get('/items/:id1/:id2', function (req, res) {
         return res.send("Range not possible.");
     }
 
-
     for( i = id1 - 1; i <= id2 - 1; i++){
-        // console.log(i);
+
         solution.push(json_obj[i]);
          }
 
