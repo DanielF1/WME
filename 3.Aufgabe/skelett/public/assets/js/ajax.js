@@ -33,9 +33,7 @@ $(document).ready(function(){
             var id = $('#country_filter_id').val();
             var range = $('#country_filter_range').val().split('-');
 
-
-
-          //  if (range != empty) {
+            if(range.length > 1){
                 $.ajax({
                     type: "GET",
                     url: "http://localhost:3000/items/" + range[0] + "/" + range[1],
@@ -67,7 +65,8 @@ $(document).ready(function(){
                         console.log(err);
                     }
                 })
-         /*   }
+            }
+
             else{
                 $.ajax({
                     type: "GET",
@@ -96,5 +95,6 @@ $(document).ready(function(){
                         console.log(text);
                         console.log(err);
                     }
-                })}*/
+                })
+            }
         })});
