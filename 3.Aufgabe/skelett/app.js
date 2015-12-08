@@ -49,16 +49,16 @@ app.get('/items/:id', function (req, res) {
     var id = req.params.id;
 // wenn id gr��er als das oben erzeugte Array ist, gibt es die Meldung �No such id  in database. aus
     if(id > json_obj.length){
-        res.send("No such id " + id + " in database.");
+        console.log("No such id " + id + " in database.");
         // oder wenn id kleiner 1 ist, gibt es die Meldung auch �No such id in database. aus
     }else if(id < 1) {
-        res.send("No such id " + id + " in database.");
+        console.log("No such id " + id + " in database.");
+    }else {
+
+        var user = json_obj[id-1];
+        // Ausgabe von der id mit den dazugeh�rigen Properties
+        res.json(user);
     }
-
-    var user = json_obj[id - 1];
-    // Ausgabe von der id mit den dazugeh�rigen Properties
-    res.json(user);
-
 });
 
 
@@ -71,20 +71,18 @@ app.get('/items/:id1/:id2', function (req, res) {
     var solution = [];
 
     if(id1 > id2){
-        return res.send("Range not possible.");
+        console.log("Range not possible.");
     }else if(id1 > json_obj.length){
-        return res.send("Range not possible.");
+        console.log("Range not possible.");
     }else if(id2 > json_obj.length){
-        return res.send("Range not possible.");
-    }
-
-    for( i = id1 - 1; i <= id2 - 1; i++){
-
-        solution.push(json_obj[i]);
-         }
-
+        console.log("Range not possible.");
+    }else{
+        for( i = id1 - 1; i <= id2 - 1; i++){
+            solution.push(json_obj[i]);
+        }
     // Ausgabe von Array zwischen id1 und id2
     res.json(solution);
+    }
 });
 
 // gibt alle Properties zurück (id, name, birth_rate_per ...)
@@ -121,15 +119,27 @@ app.get('/properties/:num', function (req, res){
 });
 
 //POST-Calls
-
 app.post('/items', function(req, res){
 
+    var lastChild = json_obj[json_obj.length - 1];
+    var id_old_split = lastChild["id"].split("0");
+
+    var id_old_int = Number(id_old_split[1]);
+    var id_new_int = id_old_int + 1;
+
+    if(id_old_int < 10){
+        var id_new = "00" + id_new_int.toString();
+    }else {
+        var id_new = "0" + id_new_int.toString();
+    }
+
     var newItem = req.body;
+    newItem["id"] = id_new;
+
     json_obj.push(newItem);
 
     res.send("Added Country " + req.body.name + " to list!");
 });
-
 
 app.delete('/items', function(req, res) {
     var id = json_obj.length;
@@ -138,7 +148,6 @@ app.delete('/items', function(req, res) {
 
     res.send("Deleted last country: " + name + "!");
 });
-
 
 app.delete('/items/:id', function(req, res) {
 

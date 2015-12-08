@@ -1,33 +1,8 @@
 $(document).ready(function(){
 
-    $.ajax({
-        type: "GET",
-        url: "http://localhost:3000/items",
-        async: true,
-        success: function(data) {
+    reload();
 
-            var tr=[];
-            for (var i = 0; i < data.length; i++) {
-                tr.push('<tr>');
-                tr.push("<td>" + data[i]["id"] + "</td>");
-                tr.push("<td>" + data[i]["name"] + "</td>");
-                tr.push("<td>" + data[i]["birth rate per 1000"] + "</td>");
-                tr.push("<td>" + data[i]["cell phones per 100"] + "</td>");
-                tr.push("<td>" + data[i]["children per woman"] + "</td>");
-                tr.push("<td>" + data[i]["electricity consumption per capita"] + "</td>");
-                tr.push("<td>" + data[i]["internet user per 100"] + "</td>");
-                tr.push('</tr>');
-            }
-            $('#table_body').append($(tr.join('')));
-
-        },
-        error: function(jqXHR, text, err) {
-            console.log(jqXHR);
-            console.log(text);
-            console.log(err);
-        }
-    }),
-
+    //filter countries
     $('#add_submit').click(function() {
 
             var id = $('#country_filter_id').val();
@@ -72,7 +47,6 @@ $(document).ready(function(){
                     success: function(data) {
 
                         $('#table_body').text("");
-
                         var tr=[];
                         tr.push('<tr>');
                         tr.push("<td>" + data["id"] + "</td>");
@@ -86,6 +60,7 @@ $(document).ready(function(){
 
                         $('#table_body').append($(tr.join('')));
 
+
                     },
                     error: function(jqXHR, text, err) {
                         console.log(jqXHR);
@@ -94,16 +69,9 @@ $(document).ready(function(){
                     }
                 })
             }
+    });
 
-
-
-
-
-
-
-
-        })
-
+    //properties
     $.ajax({
         type: "GET",
         url: "http://localhost:3000/properties",
@@ -113,42 +81,62 @@ $(document).ready(function(){
             for(i = 0; i < data.length; i++){
                 var opt = document.createElement('option');
                 opt.innerHTML = data[i];
-                opt.value = data[i];
+                opt.value = i;
                 $('#prop_selection').append(opt);
             }
-
         },
         error: function(jqXHR, text, err) {
             console.log(jqXHR);
             console.log(text);
             console.log(err);
         }
-    })
+    });
 
+    //show/hide property
+    $('#show_selected_prop').click(function(){
 
+        var num = $('prop_selection').val();
 
+        $.ajax({
+            type: "GET",
+            url: "http://localhost:3000/properties/" + num,
+            async: true,
+            success: function(data) {
 
-    /*    $('#submit').click(function() {
+                var number = data.val();
+
+                $('td:nth-child(number),th:nth-child(number)').show();
+
+            },
+            error: function(jqXHR, text, err) {
+                console.log(jqXHR);
+                console.log(text);
+                console.log(err);
+            }
+        });
+    });
+
+    //add country
+    $('#submit').click(function() {
 
         var newCountry = new Object();
-        newCountry = {"id" : "26", "name" : $('#country_name').val(),
+        newCountry = {id: "-1", name : $('#country_name').val(),
                         "birth rate per 1000" : $('#country_birth').val(),
                         "cell phones per 100" : $('#country_cellphone').val()
         };
-
-        var JsonObj = 'newData='+JSON.stringify(newCountry);
 
         $.ajax({
             type: "POST",
             url: "http://localhost:3000/items",
             async: true,
+            contentType: 'application/json',
             dataType: 'json',
             success: function (data) {
 
                 console.log(data);
 
             },
-            data: JsonObj,
+            data: JSON.stringify(newCountry),
 
             error: function (jqXHR, text, err) {
                 console.log(jqXHR);
@@ -157,15 +145,15 @@ $(document).ready(function(){
             }
         })
 
+        reload();
 
-    })*/
+    });
 
-
+    //delete country
     $('#rm_submit').click(function() {
 
         var id = $('#country_delete_id').val().toString();
 
-        console.log(id);
         if(id == null) {
             $.ajax({
                 type: "DELETE",
@@ -193,9 +181,40 @@ $(document).ready(function(){
                     console.log(text);
                     console.log(err);
                 }
-            })
+            });
+        }
+    reload();
+    });
+});
+
+//reload table content
+function reload(){
+    $.ajax({
+        type: "GET",
+        url: "http://localhost:3000/items",
+        async: true,
+        success: function(data) {
+
+            $('#table_body').text("");
+            var tr=[];
+            for (var i = 0; i < data.length; i++) {
+                tr.push('<tr>');
+                tr.push("<td>" + data[i]["id"] + "</td>");
+                tr.push("<td>" + data[i]["name"] + "</td>");
+                tr.push("<td>" + data[i]["birth rate per 1000"] + "</td>");
+                tr.push("<td>" + data[i]["cell phones per 100"] + "</td>");
+                tr.push("<td>" + data[i]["children per woman"] + "</td>");
+                tr.push("<td>" + data[i]["electricity consumption per capita"] + "</td>");
+                tr.push("<td>" + data[i]["internet user per 100"] + "</td>");
+                tr.push('</tr>');
+            }
+            $('#table_body').append($(tr.join('')));
+
+        },
+        error: function(jqXHR, text, err) {
+            console.log(jqXHR);
+            console.log(text);
+            console.log(err);
         }
     })
-
-
-});
+};
