@@ -133,22 +133,33 @@ app.post('/items', function(req, res){
 
 app.delete('/items', function(req, res) {
     var id = json_obj.length;
-    var name = json_obj[id - 1][1];
+    var name = json_obj[id - 1]["name"];
     json_obj.pop();
 
-    res.send("Deleted las country: " + name + "!");
+    res.send("Deleted last country: " + name + "!");
 });
 
+
 app.delete('/items/:id', function(req, res) {
+
     var id = req.params.id;
+
+    if(id.length == 1){
+        id = "00" + id;
+    }else if(id.length == 2){
+        id = "0" + id;
+    }
+
     success = new Boolean(false);
-    for(i = 0; i <= json_obj.length; i++){
-        if(json_obj[i][0] == id){
+
+    for(i = 0; i < json_obj.length; i++){
+        if(json_obj[i]["id"] == id){
             json_obj.splice(i,1);
             success = true;
             res.send("Item " + id + " deleted successfully.")
         }
     }
+
     if(success == false){
         res.send("No such id " + id + " in database.");
     }

@@ -55,9 +55,6 @@ $(document).ready(function(){
                             tr.push('</tr>');
                         }
                         $('#table_body').append($(tr.join('')));
-
-
-                        console.log(data);
                     },
                     error: function (jqXHR, text, err) {
                         console.log(jqXHR);
@@ -97,4 +94,108 @@ $(document).ready(function(){
                     }
                 })
             }
-        })});
+
+
+
+
+
+
+
+
+        })
+
+    $.ajax({
+        type: "GET",
+        url: "http://localhost:3000/properties",
+        async: true,
+        success: function(data) {
+
+            for(i = 0; i < data.length; i++){
+                var opt = document.createElement('option');
+                opt.innerHTML = data[i];
+                opt.value = data[i];
+                $('#prop_selection').append(opt);
+            }
+
+        },
+        error: function(jqXHR, text, err) {
+            console.log(jqXHR);
+            console.log(text);
+            console.log(err);
+        }
+    })
+
+
+
+
+    /*    $('#submit').click(function() {
+
+        var newCountry = new Object();
+        newCountry = {"id" : "26", "name" : $('#country_name').val(),
+                        "birth rate per 1000" : $('#country_birth').val(),
+                        "cell phones per 100" : $('#country_cellphone').val()
+        };
+
+        var JsonObj = 'newData='+JSON.stringify(newCountry);
+
+        $.ajax({
+            type: "POST",
+            url: "http://localhost:3000/items",
+            async: true,
+            dataType: 'json',
+            success: function (data) {
+
+                console.log(data);
+
+            },
+            data: JsonObj,
+
+            error: function (jqXHR, text, err) {
+                console.log(jqXHR);
+                console.log(text);
+                console.log(err);
+            }
+        })
+
+
+    })*/
+
+
+    $('#rm_submit').click(function() {
+
+        var id = $('#country_delete_id').val().toString();
+
+        console.log(id);
+        if(id == null) {
+            $.ajax({
+                type: "DELETE",
+                url: "http://localhost:3000/items",
+                async: true,
+                success: function (data) {
+                    alert(data);
+                },
+                error: function (jqXHR, text, err) {
+                    console.log(jqXHR);
+                    console.log(text);
+                    console.log(err);
+                }
+            })
+        }else{
+            $.ajax({
+                type: "DELETE",
+                url: "http://localhost:3000/items/"+id,
+                async: true,
+                success: function(data) {
+                    alert(data);
+                },
+                error: function(jqXHR, text, err) {
+                    console.log(jqXHR);
+                    console.log(text);
+                    console.log(err);
+                }
+            })
+        }
+    })
+
+
+});
