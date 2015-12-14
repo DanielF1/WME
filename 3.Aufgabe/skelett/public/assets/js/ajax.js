@@ -2,7 +2,7 @@ $(document).ready(function(){
 
     reload();
 
-    //filter countries
+    //Filter des Tabelleninhalts nach einer ID oder eines ID-Bereiches
     $('#add_submit').click(function() {
 
             var id = $('#country_filter_id').val();
@@ -71,7 +71,7 @@ $(document).ready(function(){
             }
     });
 
-    //properties
+    //Anzeigen der Properties in dem Select-Menue
     $.ajax({
         type: "GET",
         url: "http://localhost:3000/properties",
@@ -92,7 +92,7 @@ $(document).ready(function(){
         }
     });
 
-    //show/hide property
+    //Show/Hide der Properties
     $('#show_selected_prop').click(function(){
 
         var num = $('prop_selection').val();
@@ -116,7 +116,7 @@ $(document).ready(function(){
         });
     });
 
-    //add country
+    //Hinzufuegen eines neuen Landes mithilfe des HTML-Formulares (Klick-Event)
     $('#submit').click(function() {
 
         var newCountry = new Object();
@@ -149,7 +149,7 @@ $(document).ready(function(){
 
     });
 
-    //delete country
+    //Loeschen eines Tabelleneintrags mit Fallunterscheidung bezüglich des ID-Feldes (Klick-Event)
     $('#rm_submit').click(function() {
 
         var id = $('#country_delete_id').val().toString();
@@ -183,11 +183,13 @@ $(document).ready(function(){
                 }
             });
         }
-    reload();
+
+        reload();
+
     });
 });
 
-//reload table content
+//Tabellen-Inhalt wird neugeladen
 function reload(){
     $.ajax({
         type: "GET",

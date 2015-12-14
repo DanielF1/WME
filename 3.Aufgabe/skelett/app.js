@@ -39,32 +39,32 @@ require("fs").createReadStream("./world_data.csv").pipe(converter);
 // Aufgabe 2
 //GET Calls
 
-// gibt alle L�nder mit allen Properties zur�ck
+// gibt alle Laender mit allen Properties zurueck
 app.get('/items', function (req, res) {
     res.json(json_obj);
 });
 
-// gibt ein Land mit id und allen Properties zur�ck, Wenn id nicht vorhanden: Status �No such id in database.�
+// gibt ein Land mit id und allen Properties zurueck, Wenn id nicht vorhanden: Status "No such id in database."
 app.get('/items/:id', function (req, res) {
     var id = req.params.id;
-// wenn id gr��er als das oben erzeugte Array ist, gibt es die Meldung �No such id  in database. aus
+// wenn id groesser als das oben erzeugte Array ist, gibt es die Meldung "No such id in database." aus
     if(id > json_obj.length){
         console.log("No such id " + id + " in database.");
-        // oder wenn id kleiner 1 ist, gibt es die Meldung auch �No such id in database. aus
+        // oder wenn id kleiner 1 ist, gibt es die Meldung auch "No such id in database." aus
     }else if(id < 1) {
         console.log("No such id " + id + " in database.");
     }else {
 
         var user = json_obj[id-1];
-        // Ausgabe von der id mit den dazugeh�rigen Properties
+        // Ausgabe von der id mit den dazugehoerigen Properties
         res.json(user);
     }
 });
 
 
-// gibt alle L�nder zwischen id1 und id2 mit allen Properties zur�ck, wenn Range nicht existiert: Status �Range not possible.�
+// gibt alle Laender zwischen id1 und id2 mit allen Properties zurueck, wenn Range nicht existiert: Status "Range not possible."
 app.get('/items/:id1/:id2', function (req, res) {
-    // Variablen f�r die 2 id's anlegen
+    // Variablen fuer die 2 id's anlegen
     var id1 = req.params.id1;
     var id2 = req.params.id2;
     // erzeugen von ergebnis array
@@ -98,7 +98,7 @@ app.get('/properties', function (req, res) {
 });
 
 
-// gibt Property mit der Nummer: num zur�ck, wenn num nicht vorhanden: Status: �No such property available.�
+// gibt Property mit der Nummer: num zurueck, wenn num nicht vorhanden: Status: "No such property available."
 app.get('/properties/:num', function (req, res){
     var num = req.params.num;
     var keys = [];
@@ -121,12 +121,14 @@ app.get('/properties/:num', function (req, res){
 //POST-Calls
 app.post('/items', function(req, res){
 
+    //Anlegen der ID des neuen Country-Objektes
     var lastChild = json_obj[json_obj.length - 1];
     var id_old_split = lastChild["id"].split("0");
 
     var id_old_int = Number(id_old_split[1]);
     var id_new_int = id_old_int + 1;
 
+    //Fallunterscheidung zwischen einstelligen und zweistelligen Zahlen fuer richtige Formatierung
     if(id_old_int < 10){
         var id_new = "00" + id_new_int.toString();
     }else {
@@ -141,9 +143,13 @@ app.post('/items', function(req, res){
     res.send("Added Country " + req.body.name + " to list!");
 });
 
+//DELETE Calls
 app.delete('/items', function(req, res) {
+
     var id = json_obj.length;
     var name = json_obj[id - 1]["name"];
+
+    //letztes Element aus dem JSON-File wird gelöscht
     json_obj.pop();
 
     res.send("Deleted last country: " + name + "!");
